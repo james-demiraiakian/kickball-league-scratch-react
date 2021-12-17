@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Teams from '../../components/teams/Teams';
+import Teams from '../../components/teams/Team';
 import { getTeams } from '../../services/teams';
 
 export default function TeamList() {
