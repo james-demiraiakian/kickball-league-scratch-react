@@ -1,7 +1,7 @@
 import { client, checkError } from './client';
 
 export async function getTeams() {
-  const request = await client.from('teams').select().order('teams');
+  const request = await client.from('teams').select().order('name');
   return checkError(request);
 }
 
