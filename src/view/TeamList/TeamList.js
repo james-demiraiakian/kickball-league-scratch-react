@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Teams from '../../components/teams/Teams';
 import { getTeams } from '../../services/teams';
 
 export default function TeamList() {
@@ -14,7 +15,9 @@ export default function TeamList() {
   }, []);
   return (
     <div>
-      <h1>Team List</h1>
+      {teams.map((t) => (
+        <Teams key={t.name} {...t} />
+      ))}
     </div>
   );
 }
