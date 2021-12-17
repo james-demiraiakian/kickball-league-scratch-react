@@ -1,5 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Players() {
-  return <div>players</div>;
+export default function Players({ name }) {
+  return (
+    <div>
+      <Link>{name}</Link>
+    </div>
+  );
 }

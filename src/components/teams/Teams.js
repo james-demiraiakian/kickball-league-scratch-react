@@ -1,5 +1,17 @@
 import React from 'react';
 
-export default function Teams({ name }) {
-  return <div>{name}</div>;
+export default function Teams({ name, city, state }, selected = false) {
+  return (
+    <div>
+      <h4>{name}</h4>
+
+      {selected && (
+        <>
+          <h5>
+            {city}, {state}
+          </h5>
+        </>
+      )}
+    </div>
+  );
 }
