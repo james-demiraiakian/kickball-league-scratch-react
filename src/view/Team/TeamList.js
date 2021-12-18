@@ -5,20 +5,24 @@ import { Link } from 'react-router-dom';
 
 export default function TeamList() {
   const [teams, setTeams] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await getTeams();
       setTeams(data);
-      await console.log(data);
+      setLoading(false);
     };
     fetchData();
   }, []);
+
+  if (loading) return <h1>Loading</h1>;
+
   return (
     <div>
       {teams.map((t) => (
         <Link key={t.id} to={`/teams/${t.id}`}>
-          <Teams {...t} />
+          <Teams name={t.name} />
         </Link>
       ))}
     </div>

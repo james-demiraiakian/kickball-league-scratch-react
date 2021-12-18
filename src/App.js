@@ -17,7 +17,7 @@ function App() {
           <Route path="/team-list" component={TeamList} />
           <Route path="/teams/:id" component={TeamDetail} />
           <Route path="/player-list" component={PlayerList} />
-          <Route path="/players/:id" />
+          <Route path="/players/:id" component={TeamDetail} />
         </Switch>
       </BrowserRouter>
     </div>

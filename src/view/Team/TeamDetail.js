@@ -4,14 +4,21 @@ import { getTeamsById } from '../../services/teams';
 
 export default function TeamDetail(props) {
   const id = props.match.params.id;
-  const [team, setTeam] = useState(null);
+  const [team, setTeam] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   console.log(id);
+
   useEffect(() => {
-    getTeamsById(id).then(({ data }) => setTeam(data));
+    const fetchData = async () => {
+      const data = await getTeamsById(id);
+      setTeam(data);
+      setLoading(false);
+    };
+    fetchData();
   }, [id]);
-  return (
-    <div>
-      <Teams {...team} />
-    </div>
-  );
+  console.log(team);
+  if (loading) return <h1>Loading</h1>;
+
+  return <Teams {...team} selected />;
 }
