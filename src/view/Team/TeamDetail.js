@@ -7,8 +7,6 @@ export default function TeamDetail(props) {
   const [team, setTeam] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  console.log(id);
-
   useEffect(() => {
     const fetchData = async () => {
       const data = await getTeamsById(id);
@@ -17,7 +15,7 @@ export default function TeamDetail(props) {
     };
     fetchData();
   }, [id]);
-  console.log(team);
+
   if (loading) return <h1>Loading</h1>;
 
   return <Teams {...team} selected />;

@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
 import TeamList from './view/Team/TeamList';
 import TeamDetail from './view/Team/TeamDetail';
 import PlayerList from './view/Player/PlayerList';
+import PlayerDetail from './view/Player/PlayerDetail';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Route path="/team-list" component={TeamList} />
           <Route path="/teams/:id" component={TeamDetail} />
           <Route path="/player-list" component={PlayerList} />
-          <Route path="/players/:id" component={TeamDetail} />
+          <Route path="/players/:id" component={PlayerDetail} />
         </Switch>
       </BrowserRouter>
     </div>
