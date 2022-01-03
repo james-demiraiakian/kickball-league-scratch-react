@@ -12,6 +12,7 @@ export default function PlayerList() {
       const data = await getPlayers();
       setPlayers(data);
       setLoading(false);
+      console.log(data);
     };
     fetchData();
   }, []);

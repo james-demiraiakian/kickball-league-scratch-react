@@ -4,7 +4,7 @@ import { getTeamsById } from '../../services/teams';
 
 export default function TeamDetail(props) {
   const id = props.match.params.id;
-  const [team, setTeam] = useState([]);
+  const [team, setTeam] = useState({ players: [] });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

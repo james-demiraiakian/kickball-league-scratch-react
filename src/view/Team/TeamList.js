@@ -12,6 +12,7 @@ export default function TeamList() {
       const data = await getTeams();
       setTeams(data);
       setLoading(false);
+      console.log(data);
     };
     fetchData();
   }, []);
