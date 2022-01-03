@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders home page dom 1`] = `
+<div>
+  <div
+    class="App"
+  >
+    <h1>
+      Kickball League
+    </h1>
+    <a
+      aria-current="page"
+      class="active"
+      href="/"
+    >
+      Home
+    </a>
+    <a
+      href="/team-list"
+    >
+      Teams
+    </a>
+    <a
+      href="/player-list"
+    >
+      Players
+    </a>
+  </div>
+</div>
+`;

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a teams details 1`] = `
+<div>
+  <div>
+    <h2>
+      Namethaniel
+    </h2>
+    <h3>
+      Citsbourough
+      , 
+      Stateifornia
+    </h3>
+    <h2>
+      Players
+    </h2>
+    <h1>
+      LOADING
+    </h1>
+  </div>
+</div>
+`;

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders player detail 1`] = `
+<div>
+  <div>
+    <h4>
+      Greorge
+    </h4>
+    <h5>
+      Over There
+    </h5>
+  </div>
+</div>
+`;
