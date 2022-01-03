@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PlayerList from '../../view/Player/PlayerList';
 
 export default function Teams({ name, city, state, selected, id }) {
