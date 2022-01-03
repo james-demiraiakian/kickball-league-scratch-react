@@ -1,15 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import App from './App';
+import Teams from './Teams';
 
-it('renders home page dom', async () => {
+it('renders a teams details', async () => {
   const { container } = render(
     <MemoryRouter>
-      <App />
+      <Teams name="Namethaniel" city="Citsbourough" state="Stateifornia" selected={true} id={1} />
     </MemoryRouter>
   );
-
-  screen.getByText('Kickball League');
+  screen.getByText('Namethaniel');
 
   expect(container).toMatchSnapshot();
 });
