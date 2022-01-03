@@ -1,16 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import PlayerList from '../../view/Player/PlayerList';
 
-export default function Teams({ name, city, state, selected }) {
+export default function Teams({ name, city, state, selected, id }) {
   return (
     <div>
-      <h4>{name}</h4>
+      <h2>{name}</h2>
 
       {selected && (
         <>
-          <h5>
+          <h3>
             {city}, {state}
-          </h5>
-          <div>player list here</div>
+          </h3>
+          <h2>Players</h2>
+          <PlayerList id={id} />
         </>
       )}
     </div>

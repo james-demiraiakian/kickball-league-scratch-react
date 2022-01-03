@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import Players from '../../components/players/Players';
-import { getPlayers } from '../../services/players';
+import { getPlayers, getPlayersByTeam } from '../../services/players';
 import { Link } from 'react-router-dom';
 
-export default function PlayerList() {
+export default function PlayerList(props) {
   const [players, setPlayers] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getPlayers();
-      setPlayers(data);
-      setLoading(false);
-      console.log(data);
+      if (props.id) {
+        const data = await getPlayersByTeam(props.id);
+        setPlayers(data);
+        setLoading(false);
+      } else {
+        const data = await getPlayers();
+        setPlayers(data);
+        setLoading(false);
+      }
     };
     fetchData();
-  }, []);
+  }, [props.id]);
 
   if (loading) return <h1>LOADING</h1>;
 

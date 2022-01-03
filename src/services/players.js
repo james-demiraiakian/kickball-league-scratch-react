@@ -9,3 +9,8 @@ export async function getPlayersById(id) {
   const request = await client.from('players').select('*, teams(*)').match({ id }).single();
   return checkError(request);
 }
+
+export async function getPlayersByTeam(id) {
+  const request = await client.from('players').select('*').eq('team_id', id);
+  return checkError(request);
+}

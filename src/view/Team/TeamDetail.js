@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Teams from '../../components/teams/Teams';
-import { getTeamsById } from '../../services/teams';
+import { getTeamById } from '../../services/teams';
 
 export default function TeamDetail(props) {
   const id = props.match.params.id;
-  const [team, setTeam] = useState({ players: [] });
+  const [team, setTeam] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getTeamsById(id);
+      const data = await getTeamById(id);
       setTeam(data);
       setLoading(false);
     };
